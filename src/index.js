@@ -3,7 +3,7 @@ module.exports = function solveEquation(equation = '') {
   const arr =[];
   function cut (strS, firstF, secondS){
     let ret = '';
-    for (var j=firstF; j<secondS; j++){ret=ret+strS[j];} 
+    for (let j=firstF; j<secondS; j++){ret=ret+strS[j];} 
     ret=ret.replace(/\s/g, '');
     return ret;
   }
@@ -16,9 +16,9 @@ module.exports = function solveEquation(equation = '') {
       arr.push( Math.round( (-b-Math.sqrt(D))/(2*a) ) );
       arr.push( Math.round( (-b+Math.sqrt(D))/(2*a) ) );
     }
-    else {return "There is no answers";}
+    else return "There is no answers";
     arr.sort(FunctSort = (left, right) => left - right);
     return arr;
   }
-  else {return "Erro";}
+  else return "Erro";
 }
